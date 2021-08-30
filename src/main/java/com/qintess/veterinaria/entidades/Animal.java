@@ -82,6 +82,9 @@ public class Animal {
 		this.dataNasc = dataNasc;
 	}
 
+	
+	
+	
 	public String getDataNasc1() {
 		
 		return dataNasc.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
