@@ -8,7 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.print.DocFlavor.CHAR_ARRAY;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 
 @Entity
@@ -26,7 +28,7 @@ public class Animal {
 	//@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	private String raca;
 
-	
+	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate dataNasc;
 	
 
@@ -38,8 +40,12 @@ public class Animal {
 		this.nome = a.nome;
 		this.especie = a.especie;
 		this.raca = a.raca;
-		this.dataNasc = a.dataNasc;
+		this.dataNasc = a.dataNasc; 
 	}
+	
+//	  LocalDate date = LocalDate.now();
+//	  String text = date.format(formatter);
+//	  LocalDate parsedDate = LocalDate.parse(text, formatter);
 	
 
 	public int getId() {
@@ -81,15 +87,13 @@ public class Animal {
 	public void setDataNasc(LocalDate dataNasc) {
 		this.dataNasc = dataNasc;
 	}
-
-	
 	
 	
 	public String getDataNasc1() {
 		
 		return dataNasc.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 	}
-
+	
 	
 	
 	

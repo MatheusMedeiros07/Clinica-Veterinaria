@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 @Entity
 public class Cliente {
 
@@ -27,6 +29,7 @@ public class Cliente {
 	@NotBlank
 	@NotNull
 	@Column(length = 14)
+	@CPF
 	private String cpf;
 	
 	@NotBlank

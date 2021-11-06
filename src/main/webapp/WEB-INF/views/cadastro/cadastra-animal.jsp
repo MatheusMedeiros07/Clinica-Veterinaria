@@ -53,7 +53,7 @@
 					
 					<div class="form-group">
 						<label for="dataNasc">Data de Nascimento</label>
-						<form:input type="text" id="campoData" path="dataNasc" cssClass="form-control"/>
+						<form:input type="date" path="dataNasc" cssClass="form-control"/>
 					</div>	<br><br>
 
 
