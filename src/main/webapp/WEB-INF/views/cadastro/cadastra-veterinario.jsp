@@ -35,8 +35,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="CRV">CRV</label>
-				<form:input path="CRV" cssClass="form-control" />
+				<label for="CRMV">CRMV</label>
+				<form:input path="CRMV" cssClass="form-control" />
 			</div>
 
 			<div class="form-group">

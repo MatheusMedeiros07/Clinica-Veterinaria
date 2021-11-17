@@ -22,7 +22,7 @@ public class Veterinario {
 	@NotBlank
 	@NotNull
 	@Column(length = 30)
-	private String CRV;
+	private String CRMV;
 	
 	@NotBlank
 	@NotNull
@@ -51,7 +51,7 @@ public class Veterinario {
 	public Veterinario(Veterinario v) {
 		super();
 		this.id = v.id;
-		this.CRV = v.CRV;
+		this.CRMV = v.CRMV;
 		this.nome = v.nome;
 		this.endereco = v.endereco;
 		this.telefone = v.telefone;
@@ -72,12 +72,12 @@ public class Veterinario {
 		this.id = id;
 	}
 
-	public String getCRV() {
-		return CRV;
+	public String getCRMV() {
+		return CRMV;
 	}
 
-	public void setCRV(String cRV) {
-		CRV = cRV;
+	public void setCRMV(String cRMV) {
+		CRMV = cRMV;
 	}
 
 	public String getNome() {

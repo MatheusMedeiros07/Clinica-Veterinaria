@@ -38,7 +38,7 @@
 			<table class="table">
 				<tr>
 					<th>Nome</th>
-					<th>CRV</th>
+					<th>CRMV</th>
 					<th>Endereço</th>
 					<th>Telefone</th>
 					<th>E-mail</th>
@@ -47,7 +47,7 @@
 				<c:forEach var="veterinario" items="${veterinarios}">
 					<tr>
 						<td>${veterinario.nome}</td>
-						<td>${veterinario.CRV}</td>
+						<td>${veterinario.CRMV}</td>
 						<td>${veterinario.endereco}</td>
 						<td>${veterinario.telefone}</td>
 						<td>${veterinario.email}</td>
