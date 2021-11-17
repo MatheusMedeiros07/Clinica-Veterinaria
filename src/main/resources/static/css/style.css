@@ -1,95 +1,96 @@
 * {
-    padding:0px;
-    margin:0px;
-    font-family: 'Poppins', sans-serif;
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: rgb(225, 255, 229);
+	background-color: rgb(225, 255, 229);
 }
 
 input {
-    width: 300px;
-    height: 20px;
-    padding: 15px;
-    border-radius: 4px;
-    border: 1px solid black;
+	width: 300px;
+	height: 20px;
+	padding: 15px;
+	border-radius: 4px;
+	border: 1px solid black;
 }
 
 select, option {
-    width: 335px;
-    height: 20px;
-    padding: 30px;
-    border-radius: 4px;
-    color: black;
-    border: 1px solid black;
+	width: 335px;
+	height: 20px;
+	padding: 30px;
+	border-radius: 4px;
+	color: black;
+	border: 1px solid black;
 }
 
 input[type="submit"] {
-    width: 300px;
-    height: 14%;
-    background-color: rgb(20, 201, 20);
-    border: none;
+	width: 300px;
+	height: 14%;
+	background-color: rgb(20, 201, 20);
+	border: none;
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding-top: 20px;
 }
 
 nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
-    padding: 20px 0px 20px 0px;
-    background-color: rgb(20, 201, 20);
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+	width: 100%;
+	padding: 20px 0px 20px 0px;
+	background-color: rgb(20, 201, 20);
 }
 
 a {
-    text-decoration: none;
-    padding: 0px 20px;
+	text-decoration: none;
+	padding: 0px 20px;
 }
+
 p {
 	text-shadow: 2px 2px 5px black;
 	color: white;
 	font-size: 20px;
 }
+
 h1 {
 	-webkit-text-fill-color: white;
-  	-webkit-text-stroke-width: 1px;
-  	-webkit-text-stroke-color: black;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black;
 }
 
 nav a {
-    color: aliceblue;
+	color: aliceblue;
 }
 
 .vh89 {
-    height: 100vh;
+	height: 100vh;
 }
 
 footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 10px 0px;
-    background-color: rgb(20, 201, 20);
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 10px 0px;
+	background-color: rgb(20, 201, 20);
+	text-align: center;
 }
 
 table, th, td {
-    padding: 10px;
-    border: 1px solid black;
-    border-collapse: collapse;
-    
+	padding: 10px;
+	border: 1px solid black;
+	border-collapse: collapse;
 }
 
 .sombra, .table th, .table td {
@@ -98,43 +99,43 @@ table, th, td {
 }
 
 .bg-home {
-    background-image: url('../img/bg-home.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    filter: saturate(.6);
-    filter: blur(.9);
-
+	background-image: url('../img/bg-home.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	filter: saturate(.6);
+	filter: blur(.9);
 }
 
 .bg-agendamento {
-    background-image: url('../img/bg-agendamento.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    filter: saturate(.6);
-    filter: blur(.9);
+	background-image: url('../img/bg-agendamento.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	filter: saturate(.6);
+	filter: blur(.9);
 }
 
 .bg-agenda {
-    background-image: url('../img/bg-agenda.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    filter: saturate(.6);
+	background-image: url('../img/bg-agenda.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	filter: saturate(.6);
 }
+
 .bg-cadastra {
-    background-image: url('../img/bg-cliente-cadastro.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    filter: saturate(.6);
+	background-image: url('../img/bg-cliente-cadastro.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	filter: saturate(.6);
 }
 
 .bg-animais {
-    background-image: url('../img/bg-cliente-cadastro.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    filter: saturate(.6);
+	background-image: url('../img/bg-cliente-cadastro.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	filter: saturate(.6);
 }

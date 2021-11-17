@@ -1,4 +1,4 @@
-package com.qintess.veterinaria.controllers;
+package com.fam.veterinaria.controllers;
 
 import javax.validation.Valid;
 
@@ -8,26 +8,32 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.qintess.veterinaria.entidades.Cliente;
-import com.qintess.veterinaria.entidades.Veterinario;
-import com.qintess.veterinaria.repositorios.AnimalRepository;
-import com.qintess.veterinaria.repositorios.VeterinariaRepository;
-import com.qintess.veterinaria.repositorios.VeterinarioRepository;
+import com.fam.veterinaria.entidades.Agendamento;
+import com.fam.veterinaria.entidades.Cliente;
+import com.fam.veterinaria.entidades.Veterinario;
+import com.fam.veterinaria.repositorios.AnimalRepository;
+import com.fam.veterinaria.repositorios.ClienteRepository;
+import com.fam.veterinaria.repositorios.VeterinarioRepository;
 
 @Controller
-@RequestMapping("/cadastra-veterinario")
-public class CadastraVeterinarioController {
+@RequestMapping("/agendamento")
+public class AgendamentoController {
 
 	@Autowired
 	private VeterinarioRepository veterinarioRepository;
 	
+	@RequestMapping("/criar")
+	public String criar() {
+		
+		return "cadastro/agendamento";
+	}
 	
 	@RequestMapping("/novo")
 	public String novo(Model model) {
-		var veterinario = new Veterinario();
+		var agendamento = new Agendamento();
 		
-		model.addAttribute("veterinario", veterinario);
-		return "cadastro/cadastra-veterinario";
+		model.addAttribute("agendamento", agendamento);
+		return "cadastro/agendamento";
 	}
 	
 	

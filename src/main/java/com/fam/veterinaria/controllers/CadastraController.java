@@ -1,4 +1,4 @@
-package com.qintess.veterinaria.controllers;
+package com.fam.veterinaria.controllers;
 
 import javax.validation.Valid;
 
@@ -8,17 +8,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.qintess.veterinaria.entidades.Animal;
-import com.qintess.veterinaria.entidades.Cliente;
-import com.qintess.veterinaria.repositorios.AnimalRepository;
-import com.qintess.veterinaria.repositorios.VeterinariaRepository;
+import com.fam.veterinaria.entidades.Animal;
+import com.fam.veterinaria.entidades.Cliente;
+import com.fam.veterinaria.repositorios.AnimalRepository;
+import com.fam.veterinaria.repositorios.ClienteRepository;
 
 @Controller
 @RequestMapping("/cadastra")
 public class CadastraController {
 
 	@Autowired
-	private VeterinariaRepository veterinariaRepository;
+	private ClienteRepository clienteRepository;
 
 	@Autowired
 	private AnimalRepository animalRepository;
@@ -35,21 +35,21 @@ public class CadastraController {
 	
 	@RequestMapping("/salva")
 	public String cadastra(@Valid Cliente cliente) {
-		veterinariaRepository.save(cliente);
+		clienteRepository.save(cliente);
 		return "redirect:/consulta/agenda/";
 	}
 	
 	@RequestMapping("/deleta/{id}")
 	public String deleta(@PathVariable int id) {
 		
-		veterinariaRepository.deleteById(id);
+		clienteRepository.deleteById(id);
 		return "redirect:/consulta/agenda/";
 	}
 	
 	@RequestMapping("/edita/{id}")
 	public String edita(@PathVariable int id, Model model) {
 		
-		var clienteOptional = veterinariaRepository.findById(id);
+		var clienteOptional = clienteRepository.findById(id);
 		
 		if(clienteOptional.isPresent()) {
 			var cliente = clienteOptional.get();
@@ -63,7 +63,7 @@ public class CadastraController {
 	@RequestMapping("/animais-cliente/{id}")
 	public String animais(@PathVariable int id, Model model) {
 		
-		Cliente cliente = veterinariaRepository.findById(id).get();
+		Cliente cliente = clienteRepository.findById(id).get();
 		model.addAttribute("animais", cliente.getAnimais());
 		model.addAttribute("clienteId", id);
 		return "consulta/animais";
@@ -81,19 +81,19 @@ public class CadastraController {
 	public String salvaAnimal(@PathVariable int id, @Valid Animal animal) {
 		animalRepository.save(animal);
 		
-		Cliente cliente = veterinariaRepository.findById(id).get();
+		Cliente cliente = clienteRepository.findById(id).get();
 		cliente.addAnimal(animal);
-		veterinariaRepository.save(cliente);
+		clienteRepository.save(cliente);
 		return "redirect:/cadastra/animais-cliente/" + id;
 	}
 	
 	@RequestMapping("/deleta-animal/{clienteId}/{id}")
 	public String deletaAnimal (@PathVariable int clienteId, @PathVariable int id) {
 		
-		Cliente cliente = veterinariaRepository.findById(clienteId).get();
+		Cliente cliente = clienteRepository.findById(clienteId).get();
 		Animal animal = animalRepository.findById(id).get();
 		cliente.removeAnimal(animal);
-		veterinariaRepository.save(cliente);
+		clienteRepository.save(cliente);
 		
 		return "redirect:/cadastra/animais-cliente/" + clienteId;
 	}

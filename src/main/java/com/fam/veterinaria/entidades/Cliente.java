@@ -1,4 +1,4 @@
-package com.qintess.veterinaria.entidades;
+package com.fam.veterinaria.entidades;
 
 import java.util.ArrayList;
 import java.util.List;

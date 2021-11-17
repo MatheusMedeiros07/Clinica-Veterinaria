@@ -1,4 +1,4 @@
-package com.qintess.veterinaria.entidades;
+package com.fam.veterinaria.entidades;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +36,13 @@ public class Veterinario {
 	
 	@NotBlank
 	@NotNull
-	@Column(length = 60)
-	private String especialidades;
+	@Column(length = 30)
+	private String telefone;
+	
+	@NotBlank
+	@NotNull
+	@Column(length = 30)
+	private String email;
 	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	public List<Atendimento> atendimentos = new ArrayList<Atendimento>();
@@ -49,9 +54,10 @@ public class Veterinario {
 		this.CRV = v.CRV;
 		this.nome = v.nome;
 		this.endereco = v.endereco;
-		this.especialidades = v.especialidades;
+		this.telefone = v.telefone;
+		this.email = v.email;
 	}
-	
+
 
 	public Veterinario() {
 		super();
@@ -90,13 +96,25 @@ public class Veterinario {
 		this.endereco = endereco;
 	}
 
-	public String getEspecialidades() {
-		return especialidades;
+	public String getTelefone() {
+		return telefone;
 	}
 
-	public void setEspecialidades(String especialidades) {
-		this.especialidades = especialidades;
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 
 	public List<Atendimento> getAtendimentos() {
 		return atendimentos;
