@@ -12,51 +12,47 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="/css/style.css">
 		<link href="/css/bootstrap.min.css" rel="stylesheet"/>
-		
 		<title>Arca de Noé - Veterinária</title>
 	</head>
+	
 	<jsp:include page="../includepages/menu.jsp"></jsp:include>
+	
 	<body>
+	
+		<spring:url value="/cadastra-veterinario/edita" var="edita"/>
+		<spring:url value="/cadastra-veterinario/deleta" var="deleta"/>
+		<spring:url value="/cadastra-veterinario/especialidades" var="especialidades"/>
 		
-		<spring:url value="/cadastra/cadastra-animal" var="cadastraAnimal"/>
-		<spring:url value="/cadastra/deleta-animal" var="deleta"/>
-		<spring:url value="/cadastra/edita-animal" var="edita"/>
+		<div class="column vh89 bg-agenda">
 		
-		<div class="column vh89 bg-animais">
-			
 			<div class="container">
 			
 				<div class="jumbotron">
-					<h1 class="sombra">Animais </h1>
-					<a href="${cadastraAnimal}/${clienteId}" class="btn btn-outline-primary">Adicionar Animal</a><br><br>
+					<h1 class="sombra">Veterinários</h1>
 				</div>
 				
 				<table class="table">
 					<tr>
 						<th>Nome</th>
-						<th>Espécie</th>
-						<th>Raça</th>
-						<th>Data Nascimento</th>
-						<th colspan="2">Ações</th>
+						<th>CRV</th>
+						<th>Endereço</th>
+						<th>Nº Total Especialidades</th>
+						<th colspan="3">Ações</th>
 					</tr>
-					<c:forEach var="animal" items="${animais}">
+					<c:forEach var="veterinario" items="${veterinarios}">
 						<tr>
-							<td>${animal.nome}</td>
-							<td>${animal.especie}</td>
-							<td>${animal.raca}</td>
-							<td>${animal.dataNasc1}</td>
-							<td><a href="${edita}/${clienteId}/${animal.id}" class="btn btn-warning">Editar</a></td>
-							<td><a href="${deleta}/${clienteId}/${animal.id}" class="btn btn-danger">Deletar</a></td>
+							<td>${veterinario.nome}</td>
+							<td>${veterinario.CRV}</td>
+							<td>${veterinario.endereco}</td>
+							<td>${veterinariox.especialidades.size()}</td>
+							<td><a href="${edita}/${veterinario.id}" class="btn btn-warning">Editar</a></td>
+							<td><a href="${deleta}/${veterinario.id}" class="btn btn-danger">Deletar</a></td>
+							<td><a href="${especialidades}/${veterinario.id}" class="btn btn-info">Especialidades</a></td>
 						</tr>
 					</c:forEach>
-					
-				
 				</table>
 			</div>
-			
-			
 		</div>
-
 		
 		<script type="text/javascript" src="/js/jquery.js"></script>
 		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
