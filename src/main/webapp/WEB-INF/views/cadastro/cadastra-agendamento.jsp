@@ -22,32 +22,51 @@
 
 <body>
 	<div class="column vh89 bg-agendamento">
-		<div class="column">
-			<h2>Agendamentos</h2>
-		</div>
+		
+		<spring:url value="/agendamento/salva" var="cadastra" />
 
-		<div class="column">
-			<p>Por favor, agende o horário.</p>
+		<h1>Marcar Consulta</h1>
 
-			<form action="#" method="POST">
-				<label for="Nome">Nome</label><br> <input type="text" id="Nome"
-					placeholder="Nome"><br>
-				<br> <label for="telefone">Telefone</label><br> <input
-					type="text" id="telefone" placeholder="Telefone"><br>
-				<br> <label for="dia">Dia</label><br> <input type="date"
-					id="dia"><br>
-				<br> <label for="horario">Hora</label><br> <input
-					type="time" id="horario"><br>
-				<br> <label for="medico">Veterinário</label><br> <select
-					name="medico" id="medico">
-					<option value="#">Dr. Nome Sobrenome</option>
-					<option value="#">Dr. Nome Sobrenome</option>
-					<option value="#">Dr. Nome Sobrenome</option>
+		<form:form modelAttribute="agendamento" action="${cadastra}">
 
-				</select><br>
-				<br> <input type="submit" value="ENVIAR">
-			</form>
-		</div>
+			<input type="hidden" name="id" id="id" value="${agendamento.id}" />
+			<div class="form-group">
+				<label for="nome">Nome</label>
+				<form:input path="nome" cssClass="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="telefone">Telefone</label>
+				<form:input path="telefone" cssClass="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="dataAgendamento">Data Agendamento</label>
+				<form:input type="date" path="dataAgendamento" cssClass="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="horaAgendamento">Hora Agendamento</label>
+				<form:input type="time" path="horaAgendamento" cssClass="form-control" />
+			</div>
+
+			<div class="form-group">
+				<label for="veterinario">Veterinario</label>
+				<form:input path="veterinario" cssClass="form-control" />
+			</div>
+			<br />
+
+			<c:if test="${agendamento.id == '0'}">
+				<button type="submit" class="btn btn-primary">Cadastrar</button>
+			</c:if>
+			<c:if test="${agendamento.id != '0'}">
+				<button type="submit" class="btn btn-primary">Editar</button>
+			</c:if>
+			<a href="/" class="btn btn-success">Voltar</a>
+
+		</form:form>
+		<br />
+		<br />
 	</div>
 
 	<script type="text/javascript" src="/js/jquery.js"></script>

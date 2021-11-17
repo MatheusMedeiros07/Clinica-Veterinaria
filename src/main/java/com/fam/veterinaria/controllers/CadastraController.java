@@ -36,14 +36,14 @@ public class CadastraController {
 	@RequestMapping("/salva")
 	public String cadastra(@Valid Cliente cliente) {
 		clienteRepository.save(cliente);
-		return "redirect:/consulta/agenda/";
+		return "redirect:/consulta/clientes/";
 	}
 	
 	@RequestMapping("/deleta/{id}")
 	public String deleta(@PathVariable int id) {
 		
 		clienteRepository.deleteById(id);
-		return "redirect:/consulta/agenda/";
+		return "redirect:/consulta/clientes/";
 	}
 	
 	@RequestMapping("/edita/{id}")
